@@ -1,6 +1,6 @@
 <?php
 
-if (count($argv) != 2) return exit(sprintf("$ %s data/album_name.php\n", basename($_SERVER['SCRIPT_FILENAME'])));
+if (count($argv) !== 2) return exit(sprintf("$ %s data/album_name.php\n", basename($_SERVER['SCRIPT_FILENAME'])));
 if (!is_file($argv[1])) return exit('Not a file : ' . $argv[1] . "\n");
 
 require_once "duree.php";
@@ -54,12 +54,12 @@ function affiche(): void
 {
     global $monAlbum;
     echo sprintf("%s (%s, %s)\n", $monAlbum['nom'], $monAlbum['artiste'], $monAlbum['année']);
-    $totalDuration = '00:00';
+    $totalDuration = ['m' => 0, 's' => 0];
     foreach ($monAlbum['morceaux'] as $song) {
         afficheMorceau($song);
-        $totalDuration = toString(add(fromString($totalDuration), fromString($song['durée'])));
+        $totalDuration = add($totalDuration, fromString($song['durée']));
     }
-    echo 'Durée totale : ' . $totalDuration;
+    echo 'Durée totale : ' . toString($totalDuration);
 }
 
 // La variable globale $monAlbum est supposée définie dans un fichier PHP à inclure, dont
