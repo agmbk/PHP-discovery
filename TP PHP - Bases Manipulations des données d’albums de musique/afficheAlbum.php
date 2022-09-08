@@ -40,7 +40,7 @@ function ordre(string $disque, string $piste): string
  */
 function afficheMorceau(array $m): void
 {
-    echo sprintf("	%s - %s%s - %s", ordre($m['disque'], $m['piste']), $m['titre'], isset($m['artiste']) ? ' (' . $m['artiste'] . ')' : '', $m['durée']) . "\n";
+    echo ordre($m['disque'], $m['piste']), ' - ', $m['titre'], isset($m['artiste']) ? ' (' . $m['artiste'] . ') - ' : ' - ', $m['durée'], "\n";
 }
 
 /**
@@ -59,7 +59,7 @@ function affiche(): void
         afficheMorceau($song);
         $totalDuration = add($totalDuration, fromString($song['durée']));
     }
-    echo 'Durée totale : ' . toString($totalDuration);
+    echo 'Durée totale : ', toString($totalDuration);
 }
 
 // La variable globale $monAlbum est supposée définie dans un fichier PHP à inclure, dont
