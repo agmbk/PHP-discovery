@@ -7,14 +7,13 @@ foreach (scandir('./data') as $dir) {
     $file = basename($dir);
     echo $file . "\n";
 
-    $resControl = explode("\r", $resControl);
-    $res = explode("\n", shell_exec('php afficheAlbum.php data/' . $dir));
+    $resControl = preg_split('/\n|\r\n?/', $resControl);
+    $res = preg_split('/\n|\r\n?/', shell_exec('php afficheAlbum.php data/' . $dir));
     $error = false;
 
     foreach ($res as $i => $line) {
         $lineControl = trim($resControl[$i]);
         $line = trim($line);
-
         if ($line !== $lineControl) {
             $error = true;
             echo 'Invalid line (', ($i + 1), ') "', $line, '" !== "', $lineControl, "\"\n";
