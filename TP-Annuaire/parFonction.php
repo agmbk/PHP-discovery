@@ -16,18 +16,21 @@ foreach ($annuaireInterne[0] as $key => $value) {
 $html .= "</thead><tbody>";
 
 /**
- * Display each person
+ * Sort the array by function
+ * @param $a
+ * @param $b
+ * @return int
  */
-$min = 0;
-for ($i = 0; $i < count($annuaireInterne); $i++) {
-    for ($j = $i; $j < count($annuaireInterne); $j++) {
-        if (strcmp($annuaireInterne[$min]['bureau'], $annuaireInterne[$j]['bureau']) > 0) $min = $j;
-    }
-    $temp = $annuaireInterne[$i];
-    $annuaireInterne[$i] = $annuaireInterne[$min];
-    $annuaireInterne[$min] = $temp;
+function cmp($a, $b): int
+{
+    return strcmp($a["fonction"], $b["fonction"]);
 }
 
+usort($annuaireInterne, 'cmp');
+
+/**
+ * Display each person
+ */
 foreach ($annuaireInterne as $personne) {
     $html .= uneLigneHTML($personne);
 }

@@ -14,4 +14,3 @@ echo 'fromString("3:30:40") ==> ', toString($d2), "\n";
 
 $sum = add($d1, $d2);
 echo toString($d1), " + ", toString($d2), " = ", toString($sum), "\n";
-

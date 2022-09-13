@@ -60,14 +60,15 @@ table thead tr {
 }
 
 table {
+    max-width: 90%;
     margin: 0 auto;
-    border: 1px solid #CCCCFF;
-
+    padding: 0;
+    border-collapse: collapse;
 }
 
 table td {
-    margin: 0;
-    padding: 0;
+    height: 20px;
+    padding: 5px 10px 5px 10px;
     border: 1px solid #CCCCFF;
 }
 
