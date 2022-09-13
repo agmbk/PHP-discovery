@@ -1,0 +1,76 @@
+/* Feuille de style pour le TP 2 sur les bases de PHP 
+ * Auteur : dG, le 14/09/2020 */
+
+body {
+    color: black;
+    background: white;
+    font-family: Verdana, Trebuchet MS, sans-serif;
+}
+
+h1 {
+    font-size: 1.2em;
+    text-align: center;
+    color: white;
+    background: #7777AA;
+}
+
+a:link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #999999;
+}
+
+a:visited {
+    text-decoration: none;
+    font-weight: bold;
+    color: #999999;
+}
+
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
+    background: #999999;
+    cursor: pointer;
+}
+
+/* Pour les messages */
+p.message {
+    font-weight: bold;
+    text-align: center;
+    color: #29A329;
+    background-color: #81F0BC;
+    border: 1px solid #29A329;
+    padding: 3px 5px;
+}
+
+p.erreur {
+    color: red;
+    background-color: #FFA3A3;
+    border: 1px solid red;
+    padding: 3px 5px;
+}
+
+table thead tr {
+    background-color: #7777AA;
+}
+
+table {
+    margin: 0 auto;
+    border: 1px solid #CCCCFF;
+
+}
+
+table td {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #CCCCFF;
+}
+
+table tr:nth-child(even) {
+    background-color: #CCCCFF;
+}
