@@ -17,7 +17,7 @@ $annuaireInterne = [
     ['nom' => "BRUNET", 'prénom' => "Bernard", 'poste' => "867", 'bureau' => "D012", 'fonction' => "TC, Responsable des projets"],
     ['nom' => "CARROUE", 'prénom' => "Nathalie", 'poste' => "887", 'bureau' => "E012", 'fonction' => "Secrétariat IAE/IUT, L3 Management"],
     ['nom' => "CARSANA", 'prénom' => "Laurence", 'poste' => "876", 'bureau' => "E009", 'fonction' => "IAE - Responsable M2 Parcours Communication et digitale"],
-    ['nom' => "CEYSSON", 'prénom' => "Christelle", 'poste' => "870", 'bureau' => " E011", 'fonction' => "Secrétariat IAE, M1 et M2 du chiffre"],
+    ['nom' => "CEYSSON", 'prénom' => "Christelle", 'poste' => "870", 'bureau' => "E011", 'fonction' => "Secrétariat IAE, M1 et M2 du chiffre"],
     ['nom' => "CHARENSOL", 'prénom' => "Sylvain", 'poste' => "835", 'bureau' => "B119", 'fonction' => "INFO, Directeur des Etudes 1ère année"],
     ['nom' => "CHECHAT", 'prénom' => "David", 'poste' => "837", 'bureau' => "B109", 'fonction' => "CRI"],
     ['nom' => "CHOKOR", 'prénom' => "Ahmad", 'poste' => "878", 'bureau' => "E007", 'fonction' => "IAE"],

@@ -28,7 +28,7 @@ foreach ($annuaireInterne as $personne) {
 if ($res) {
     $html .= $res;
 } else {
-    $html .= '<td> Error, ' . $achercher . ' not found</td>';
+    $html .= '<p class="erreur">' . $achercher . '</p>';
 }
 
 $html .= "</tbody></table>";

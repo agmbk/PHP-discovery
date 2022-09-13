@@ -18,17 +18,18 @@ $html .= "</thead><tbody>";
 /**
  * Display each person
  */
-$res = [];
-foreach ($annuaireInterne as $index => $personne) {
-    if (ord($personne['bureau']) > ord(end($res)['bureau'])) {
-        $res[] = $personne;
-        echo $personne['bureau'] . '-' . ord($personne['bureau']) . end($res)['bureau'] . "\n";
-    }
-    /*foreach ($annuaireInterne as $indexToCompare => $personneToCompare) {
-        if ($indexToCompare > $index && ord($personneToCompare['bureau']) < ord($personne['bureau']))
-            $html .= uneLigneHTML($personneToCompare);
-    }*/
+$res = $annuaireInterne;
+$min = 0;
 
+for ($i = 0; $i < count($annuaireInterne); $i++) {
+    for ($j = $i; $j < count($annuaireInterne); $j++) {
+        if ($res[$j]['bureau'] < $res[$min]['bureau']) {
+            $min = $j;
+        }
+    }
+    $temp = $res[$i];
+    $res[$i] = $res[$min];
+    $res[$min] = $temp;
 }
 
 foreach ($res as $indexToCompare => $personne) {
