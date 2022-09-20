@@ -1,6 +1,6 @@
 <?php
 require_once "annuaire.php";
-require_once "tableTemplate.php";
+require_once "functions.php";
 global $annuaireInterne;
 
 $html = "<table><thead>";
@@ -23,5 +23,5 @@ foreach ($annuaireInterne as $personne) {
 }
 $html .= "</tbody></table>";
 
-affiche($html);
+displayHTML($html);
 
