@@ -20,19 +20,11 @@ $html .= "</thead><tbody>";
  */
 $min = 0;
 for ($i = 0; $i < count($annuaireInterne); $i++) {
-    for ($j = $i; $j < count($annuaireInterne); $j++) {
-        if (strcmp($annuaireInterne[$min]['bureau'], $annuaireInterne[$j]['bureau']) > 0) $min = $j;
+    for ($j = $i + 1; $j < count($annuaireInterne); $j++) {
+        if ($annuaireInterne[$min]['bureau'] > $annuaireInterne[$j]['bureau']) $min = $j;
     }
-    $temp = $annuaireInterne[$i];
-    $annuaireInterne[$i] = $annuaireInterne[$min];
-    $annuaireInterne[$min] = $temp;
+    $html .= uneLigneHTML($annuaireInterne[$min]);
+    $annuaireInterne[$min] = $annuaireInterne[$i];
 }
 
-foreach ($annuaireInterne as $personne) {
-    $html .= uneLigneHTML($personne);
-}
-
-$html .= "</tbody></table>";
-
-affiche($html);
-
+affiche($html . "</tbody></table>");
