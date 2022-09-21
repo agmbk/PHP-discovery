@@ -17,14 +17,14 @@ function displayHTML(string $html): void
     <body>
     <h1>Scripts PHP pour le TP Annuaire</h1>' .
         $html .
-        "</tbody></table></body></html>";
+        "</body></html>";
 }
 
 /**
  * Display the table header
- * @param array $arr
+ * @param string $data
  */
-function displayTable(array $arr): void
+function displayTable(string $data): void
 {
     $html = '<table><thead>';
     /**
@@ -33,29 +33,25 @@ function displayTable(array $arr): void
     foreach (["NOM", "PRENOM", "POSTE", "BUREAU", "FONCTION"] as $value) {
         $html .= '<td>' . $value . '</td>';
     }
-    $res = '';
-    /**
-     * Display each person
-     */
-    foreach ($arr as $person) {
-        $res .= uneLigneHTML($person);
-    }
-    displayHTML($html . "</thead><tbody>" . $res . "</tbody></table>");
+    displayHTML($html . "</thead><tbody>" . $data . "</tbody></table>");
 }
 
 /**
  * Sort the array by function
  * @param array $arr
- * @param string $key
+ * @param string $_key
  * @return array
  */
-function sortArray(array $arr, string $key): array
+function sortArray(array $arr, string $_key): array
 {
+    global $key;
+    $key = $_key;
     function cmp($a, $b): int
     {
         global $key;
         return strcmp($a[$key], $b[$key]);
     }
+
     usort($arr, 'cmp');
     return $arr;
 }

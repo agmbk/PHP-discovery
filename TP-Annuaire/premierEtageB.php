@@ -3,12 +3,12 @@ require_once "annuaire.php";
 require_once "functions.php";
 global $annuaireInterne;
 
-$res = "";
+$html = "";
 /**
  * Display each person
  */
 foreach ($annuaireInterne as $personne) {
-    if (str_starts_with($personne['bureau'], 'B1')) $res .= uneLigneHTML($personne);
+    if (str_starts_with($personne['bureau'], 'B1')) $html .= uneLigneHTML($personne);
 }
 
-displayTable($res);
+displayTable($html);

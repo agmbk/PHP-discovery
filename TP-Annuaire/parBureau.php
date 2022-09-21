@@ -12,10 +12,8 @@ for ($i = 0; $i < count($annuaireInterne); $i++) {
     for ($j = $i + 1; $j < count($annuaireInterne); $j++) {
         if ($annuaireInterne[$min]['bureau'] > $annuaireInterne[$j]['bureau']) $min = $j;
     }
-    $temp = $annuaireInterne[$min];
-    // $html .= uneLigneHTML($annuaireInterne[$min]);
+    $html .= uneLigneHTML($annuaireInterne[$min]);
     $annuaireInterne[$min] = $annuaireInterne[$i];
-    $annuaireInterne[$i] = $temp;
 }
 
-displayTable($annuaireInterne);
+displayTable($html);

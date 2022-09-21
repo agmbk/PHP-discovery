@@ -66,4 +66,4 @@ function affiche(): void
 // le nom est passé en argument sur la ligne de commande (tableau $argv).
 // TODO : à compléter
 
-displayHTML();
+affiche();
